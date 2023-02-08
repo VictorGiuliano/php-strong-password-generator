@@ -7,4 +7,4 @@ if (empty($_SESSION['logged_in'])) {
 $password_length = $_SESSION['psw'];
 ?>
 <h1>La psw è:</h1>
-<p><?= $password_length ?></p>
+<p><?= randomPassword($password_length) ?></p>
