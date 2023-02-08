@@ -1,5 +1,6 @@
 <?php
-$password_length = isset($GET_['pass_lenght']);
+$password_length = $_GET['pass_lenght'] ?? '';
+
 
 function randomPassword($password_length)
 {
@@ -12,8 +13,6 @@ function randomPassword($password_length)
     }
     return $password;
 }
-var_dump(randomPassword(6));
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +28,7 @@ var_dump(randomPassword(6));
 <body>
     <div class="container">
         <div class="alert alert-primary" role="alert">
-            Result:
+            Result: <p><?= randomPassword($password_length) ?></p>
         </div>
         <div class="card my-4 py-3 px-5" style="width: 100%;">
             <form action="" method="GET">
