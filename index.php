@@ -1,3 +1,20 @@
+<?php
+$password_length = isset($GET_['pass_lenght']);
+
+function randomPassword($password_length)
+{
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!><"£';
+    $password = '';
+    $alphaLength = strlen($alphabet) - 1;
+
+    for ($i = 0; $i < $password_length; $i++) {
+        $password .= $alphabet[random_int(0, $alphaLength)];
+    }
+    return $password;
+}
+var_dump(randomPassword(6));
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +28,11 @@
 
 <body>
     <div class="container">
+        <div class="alert alert-primary" role="alert">
+            Result:
+        </div>
         <div class="card my-4 py-3 px-5" style="width: 100%;">
-            <form method="GET">
+            <form action="" method="GET">
                 <div class="d-flex align-items-center justify-content-between">
                     <label for="psw" class="form-label">Lunghezza Password:</label>
                     <div>
@@ -22,7 +42,6 @@
                 <button type="submit" class="btn btn-primary">Invia</button>
             </form>
         </div>
-
     </div>
 </body>
 
