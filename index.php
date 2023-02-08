@@ -1,6 +1,13 @@
 <?php
 $password_length = $_GET['pass_lenght'] ?? '';
 include 'function.php';
+$Is_control = false;
+if (!empty($password_length)) {
+    $Is_control == true;
+    header('Location: page_psw.php');
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
