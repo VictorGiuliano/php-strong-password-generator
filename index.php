@@ -4,6 +4,11 @@ include 'function.php';
 $Is_control = false;
 if (!empty($password_length)) {
     $Is_control == true;
+
+    session_start();
+
+    $_SESSION['logged_in'] = true;
+    $_SESSION['psw'] = $_GET['pass_lenght'] ?? 'number';
     header('Location: page_psw.php');
 }
 
