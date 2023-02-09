@@ -1,6 +1,6 @@
 <?php
 
-include 'function.php';
+include __DIR__ . '/function.php';
 session_start();
 if (empty($_SESSION['logged_in'])) {
     header('Location: index.php');
