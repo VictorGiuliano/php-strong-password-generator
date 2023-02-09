@@ -1,4 +1,4 @@
-<?php 
+<?php
 function randomPassword($password_length)
 {
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!><"£';
